@@ -21,9 +21,9 @@ class TestSimpleHashMap {
 
 	@BeforeEach
 	void setUp() {
-//		m = new SimpleHashMap<Integer, Integer>(10);
-//		m16 = new SimpleHashMap<Integer, Integer>();
-//		s = new SimpleHashMap<String, Integer>();
+		m = new SimpleHashMap<Integer, Integer>(10);
+		m16 = new SimpleHashMap<Integer, Integer>();
+		s = new SimpleHashMap<String, Integer>();
 	}
 
 	@AfterEach
@@ -188,9 +188,10 @@ class TestSimpleHashMap {
 			m16.put(r, r);
 			randNbrs.add(r);
 		}
-		for (int i : randNbrs) {			
+		for (int i : randNbrs) {
 			assertEquals(Integer.valueOf(i), m16.get(i), "key not found in map:" + i);
 		}
+		System.out.println(((SimpleHashMap) m16).show());
 	}
 	
 	@Test
